@@ -13,6 +13,9 @@ const currUserScore = document.querySelector("#user-score");
 const currCompScore = document.querySelector("#comp-score");
 const msg = document.querySelector("#msg");
 
+const userImg = document.querySelector("#user-choice img");
+const compImg = document.querySelector("#comp-choice img");
+
 const showWinner = (userWin) => {
     if(userWin) {
         console.log("You win!");
@@ -39,6 +42,30 @@ const drawGame = () => {
 const playGame = (userChoice) => {
     console.log("User choice =",userChoice);
     let compChoice = getCompChoice();
+
+    // if(compChoice === "rock") {
+    //     compImg.src = "./images/rock.png";
+    // }
+    // else if(compChoice === "paper") {
+    //     compImg.src = "./images/paper.png";
+    // }
+    // else {
+    //     compImg.src = "./images/scissor.png";
+    // }
+    compImg.src = `./images/${compChoice}.png`;
+
+    // if(userChoice === "rock") {
+    //     userImg.src = "./images/rock.png";
+    // }
+    // else if(userChoice === "paper") {
+    //     userImg.src = "./images/paper.png";
+    // }
+    // else {
+    //     userImg.src = "./images/scissor.png";
+    // }
+    userImg.src = `./images/${userChoice}.png`
+
+
     console.log("Computer choice =",compChoice);
 
     if(userChoice === compChoice) {
